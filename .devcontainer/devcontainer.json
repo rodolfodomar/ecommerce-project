@@ -1,0 +1,12 @@
+{
+  "name": "E-commerce Project",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "dev_env",
+  "workspaceFolder": "/home/jovyan/workspace",
+  "shutdownAction": "stopCompose",
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter",
+    "ms-python.vscode-pylance"
+  ]
+}

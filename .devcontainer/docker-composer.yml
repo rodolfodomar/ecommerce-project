@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  dev_env:
+    # Use an official Jupyter image, which is great for data science.
+    image: jupyter/scipy-notebook:latest
+    container_name: dev_env_ds
+    
+    # Map the port 8888 for Jupyter notebooks.
+    ports:
+      - '8888:8888'
+
+    # Mount your local project folder into the container.
+    volumes:
+      - ../:/home/jovyan/workspace
+
+    # A command to install dependencies when the container starts.
+    command: >
+      bash -c "pip install -r /home/jovyan/workspace/requirements.txt && start.sh"
+
+    # Set the working directory inside the container.
+    working_dir: /home/jovyan/workspace
