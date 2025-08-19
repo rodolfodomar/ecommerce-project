@@ -1,12 +1,20 @@
 {
-  "name": "E-commerce Project",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "dev_env",
-  "workspaceFolder": "/home/jovyan/workspace",
-  "shutdownAction": "stopCompose",
-  "extensions": [
-    "ms-python.python",
-    "ms-toolsai.jupyter",
-    "ms-python.vscode-pylance"
-  ]
+    "name": "E-commerce PySpark Project",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "service": "dev_env",
+    "workspaceFolder": "/home/jovyan/workspace",
+    "shutdownAction": "stopCompose",
+    "customizations": {
+      "vscode": {
+         "extensions": [
+            "ms-python.python",
+            "ms-toolsai.jupyter"
+          ]
+      }
+    },
+    // Use postCreateCommand to install dependencies after the container is built.
+    // This is more reliable than using the 'command' in docker-compose.
+    "postCreateCommand": "pip install --user -r requirements.txt"
 }

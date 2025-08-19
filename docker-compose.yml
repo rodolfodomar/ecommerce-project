@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  dev_env:
+    # Build the container image from the Dockerfile in the current directory
+    build: .
+    container_name: ecommerce_pyspark_env
+    ports:
+      - '8888:8888' # Jupyter port
+      - '4040:4040' # Spark UI port
+    volumes:
+      # Mount the project's root directory into the container's workspace
+      - .:/home/jovyan/workspace
+    working_dir: /home/jovyan/workspace

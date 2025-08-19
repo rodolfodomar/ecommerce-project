@@ -1,6 +1,11 @@
+# Core data science libraries
 pandas
 numpy
 scikit-learn
 jupyterlab
 matplotlib
 seaborn
+
+# Spark libraries
+pyspark
+findspark
